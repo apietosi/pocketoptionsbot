@@ -1,48 +1,40 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
-	"manifest_version": 3,
-	"name": "PocketOption BOT",
-	"version": "1.3.0",
-	"author": "Vitaly Belov",
-	"current_locale": "en",
-	"description": "PocketOption trading robot",
-	"homepage_url": "https://v3.belobot.ru/",  
-  
-	"content_scripts": [
-		{
-		  "matches": ["https://pocketoption.com/*","https://p.finance/*","https://po.company/*","https://po1.capital/*","https://platform1.po2.capital/*"],
-		  "js": ["content_script_injector.js"],
-		  "run_at": "document_start"
-		},
-		{
-		  "matches": ["https://pocketoption.com/*cabinet*","https://p.finance/*cabinet*","https://po.company/*cabinet*","https://po1.capital/*cabinet*","https://platform1.po2.capital/*"],
-		  "js": ["ext/jquery-3.4.1.min.js","ext/bootstrap.min.js","main.js"],
-		  "css":["ext/bootstrap.min.css"],
-		  "run_at": "document_end"
-		}		
-	],
-	"permissions": [
-		"storage"
-	],
-	"host_permissions": [
-		"https://pocketoption.com/*","https://p.finance/*","https://v3.belobot.ru/","https://po.company/*","https://po1.capital/*","https://platform1.po2.capital/*"
-	],
-	"web_accessible_resources": [{
-		"resources":["content_script.js","img/close-24px.svg","img/done-24px.svg","img/done_all-24px.svg"],
-		"matches": [ "https://pocketoption.com/*","https://p.finance/*","https://po.company/*","https://po1.capital/*","https://platform1.po2.capital/*" ]
-	}],
-	"action": {
-		"default_title": "PocketOption BOT",
-		"default_icon" : "icons/32.png"
-	},
-	"icons": {
-		"192" : "icons/192.png",
-		"168" : "icons/168.png",
-		"144" : "icons/144.png",
-		"96" : "icons/96.png",
-		"72" : "icons/72.png",
-		"48" : "icons/48.png",
-		"32" : "icons/32.png"
-	}
+   "action": {
+      "default_icon": "icons/32.png",
+      "default_title": "PocketOption BOT"
+   },
+   "author": "Vitaly Belov",
+   "content_scripts": [ {
+      "js": [ "content_script_injector.js" ],
+      "matches": [ "https://pocketoption.com/*", "https://p.finance/*", "https://po.company/*", "https://po1.capital/*", "https://platform1.po2.capital/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "ext/bootstrap.min.css" ],
+      "js": [ "ext/jquery-3.4.1.min.js", "ext/bootstrap.min.js", "main.js" ],
+      "matches": [ "https://pocketoption.com/*cabinet*", "https://p.finance/*cabinet*", "https://po.company/*cabinet*", "https://po1.capital/*cabinet*", "https://platform1.po2.capital/*" ],
+      "run_at": "document_end"
+   } ],
+   "current_locale": "en",
+   "description": "PocketOption trading robot",
+   "homepage_url": "https://v3.belobot.ru/",
+   "host_permissions": [ "https://pocketoption.com/*", "https://p.finance/*", "https://v3.belobot.ru/", "https://po.company/*", "https://po1.capital/*", "https://platform1.po2.capital/*" ],
+   "icons": {
+      "144": "icons/144.png",
+      "168": "icons/168.png",
+      "192": "icons/192.png",
+      "32": "icons/32.png",
+      "48": "icons/48.png",
+      "72": "icons/72.png",
+      "96": "icons/96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkQxmNcExBI4Jmx1J6uOwDx+HT2h1xpOQB5e/jQ7KBKemBydjGSDNbAbYyCj6V3HI7nK3Ftl4LBu5tLIQ3V2nLGbgoug0nL7VrEBUwmZad0VNlaesmyDmR5NXQG6V/A0c4GwJNAFUQ6+wZlGNvXPfau5WQTHH9vqccUeUZaIE2rAnphqfspX3Pjwj/DAaDHot+Zfv6qxEH6I3pWJEDmbEtdV0bPCqIDF61cgZ3StGcYXuyIreGR3R46OrQbBGVZuwx3NowvxWn4IqGqsB3PtoWuxwJqOG9nZ81DgakPjVpGWonPrVQI/gCgXxliaNfQnOwZDYgS/lLdT2vuaxZ96hwQIDAQAB",
+   "manifest_version": 3,
+   "name": "PocketOption BOT",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.0",
+   "web_accessible_resources": [ {
+      "matches": [ "https://pocketoption.com/*", "https://p.finance/*", "https://po.company/*", "https://po1.capital/*", "https://platform1.po2.capital/*" ],
+      "resources": [ "content_script.js", "img/close-24px.svg", "img/done-24px.svg", "img/done_all-24px.svg" ]
+   } ]
 }
